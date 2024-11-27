@@ -6,8 +6,7 @@ Flutter App that provides a feature-rich Kanban Board for managing tasks efficie
 ## Installation
 
 ### Prerequisites
-Flutter: Version 3.24.5
-Dart: Version 3.5.4
+Flutter Version: 3.24.5, Dart: Version 3.5.4
 
 ### Steps to Run the App
 1. Clone the Repository:
