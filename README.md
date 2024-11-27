@@ -11,21 +11,25 @@ Dart: Version 3.5.4
 
 ### Steps to Run the App
 1. Clone the Repository:
-
-git clone <repository-url>
-cd time_tracking_app
+   ```bash
+   git clone <repository-url>
+   cd time_tracking_app
+   ```
 
 2. Install Dependencies:
-
-flutter pub get
+   ```bash
+   flutter pub get
+   ```
 
 3. Add Your Token: Navigate to the file lib/core/constants/app_constants.dart and set your access token in the ACCESS_TOKEN field
-
-static const String ACCESS_TOKEN = "YOUR_VALUE_HERE";
+   ```bash
+   static const String ACCESS_TOKEN = "YOUR_VALUE_HERE";
+   ```
 
 4. Run the Application:
-
-flutter run
+   ```bash
+   flutter run
+   ```
 
 ## File Size
 21.6MB
