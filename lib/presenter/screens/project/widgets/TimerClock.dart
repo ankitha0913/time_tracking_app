@@ -73,7 +73,7 @@ class _TimerClockState extends State<TimerClock> {
             textAlign: TextAlign.center,
             DateTimeUtil.formatTime(remainingTime),
             style: const TextStyle(
-                fontSize: 40,
+                fontSize: 35,
                 fontWeight: FontWeight.bold,
                 overflow: TextOverflow.visible),
           ),

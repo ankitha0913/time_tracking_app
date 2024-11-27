@@ -48,7 +48,7 @@ class _TaskDetailsState extends State<TaskDetails> {
       color: AppColors.cyan,
       width: double.infinity,
       height: MediaQuery.of(context).size.height *
-          (widget.isCompletedView ? 0.9 : (isTodo ? 0.6 : 0.5)),
+          (widget.isCompletedView ? 0.9 : (isTodo ? 0.6 : 0.7)),
       padding: const EdgeInsets.all(15),
       child:
           BlocConsumer<ProjectBloc, ProjectState>(listener: (context, state) {
@@ -56,43 +56,47 @@ class _TaskDetailsState extends State<TaskDetails> {
           return context.showToast(message: state.message, isError: true);
         }
       }, builder: (context, state) {
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (widget.isCompletedView)
-              completedTaskHeader(),
-            if (!isTodo)
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: TimerClock(
-                  initialTime: widget.task.timeSpent ?? 0,
-                  task: widget.task,
+        return Padding(
+            padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (widget.isCompletedView)
+                completedTaskHeader(),
+              if (!isTodo)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: TimerClock(
+                    initialTime: widget.task.timeSpent ?? 0,
+                    task: widget.task,
+                  ),
                 ),
+              widget.task.description == null || widget.task.description!.isEmpty
+                  ? AddDescriptionButton(task: widget.task)
+                  : TaskDescription(task: widget.task),
+              (widget.task.comments != null && widget.task.comments!.isNotEmpty)
+                  ? Expanded(
+                      child: CommentSection(comments: widget.task.comments ?? []),
+                    )
+                  : const Spacer(),
+              AddComment(
+                controller: _commentController,
+                onSend: () {
+                  CommentRes comment = CommentRes(
+                      id: UUIDGenerator.generate(),
+                      taskId: widget.task.id,
+                      content: _commentController.text.trim());
+                  widget.task.comments?.add(comment);
+                  context
+                      .read<ProjectBloc>()
+                      .add(AddCommentEvent(comment: comment));
+                  _commentController.clear();
+                },
               ),
-            widget.task.description == null || widget.task.description!.isEmpty
-                ? AddDescriptionButton(task: widget.task)
-                : TaskDescription(task: widget.task),
-            (widget.task.comments != null && widget.task.comments!.isNotEmpty)
-                ? Expanded(
-                    child: CommentSection(comments: widget.task.comments ?? []),
-                  )
-                : const Spacer(),
-            AddComment(
-              controller: _commentController,
-              onSend: () {
-                CommentRes comment = CommentRes(
-                    id: UUIDGenerator.generate(),
-                    taskId: widget.task.id,
-                    content: _commentController.text.trim());
-                widget.task.comments?.add(comment);
-                context
-                    .read<ProjectBloc>()
-                    .add(AddCommentEvent(comment: comment));
-                _commentController.clear();
-              },
-            ),
-          ],
+            ],
+          ),
         );
       }),
     );

@@ -10,7 +10,7 @@ import 'package:time_tracking_app/presenter/screens/project/widgets/HistoryTaskC
 import '../../../../data/model/task/completed_task_res.dart';
 import '../../../common_widgets/AppLoader.dart';
 import '../bloc/project_bloc.dart';
-import '../widgets/EditTaskDetails.dart';
+import '../widgets/TaskDetails.dart';
 
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({super.key, required this.projectId});

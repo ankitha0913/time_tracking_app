@@ -8,7 +8,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../common_widgets/DeleteItemDialog.dart';
 import '../../../common_widgets/NameFieldDialog.dart';
 import '../bloc/project_bloc.dart';
-import 'EditTaskDetails.dart';
+import 'TaskDetails.dart';
 
 class TaskCard extends StatelessWidget {
   const TaskCard({super.key, required this.task});
