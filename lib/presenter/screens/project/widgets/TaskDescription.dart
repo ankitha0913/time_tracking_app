@@ -35,12 +35,12 @@ class TaskDescription extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          Text(
-            task.description ?? "",
-            style: const TextStyle(color: AppColors.primary, fontSize: 15),
-          ),
-          const SizedBox(
-            width: 8,
+          SizedBox(
+            width: MediaQuery.of(context).size.width*0.6,
+            child: Text(
+              task.description ?? "",
+              style: const TextStyle(color: AppColors.primary, fontSize: 15),
+            ),
           ),
           const Spacer(),
           IconButton(
