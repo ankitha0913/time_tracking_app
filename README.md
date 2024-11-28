@@ -34,5 +34,7 @@ Flutter Version: 3.24.5, Dart: Version 3.5.4
 21.6MB
 
 ## Video Recording
-Link to be added
+
+[Watch the video](https://drive.google.com/file/d/1CrzAvGE6YppkUDUj2j3_cTIg_Nw-quoA/view?usp=drivesdk)
+
 
