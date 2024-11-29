@@ -40,7 +40,7 @@ Flutter Version: 3.24.5, Dart: Version 3.5.4
 ## Screenshots
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <img src="https://github.com/user-attachments/assets/92c6309d-7f00-4ac5-b83f-12c5d991fdd7)" alt="Image 1" width="48%">
+    <img src="https://github.com/user-attachments/assets/92c6309d-7f00-4ac5-b83f-12c5d991fdd7" alt="Image 1" width="48%">
     <img src="https://github.com/user-attachments/assets/d0b3a907-8775-40e3-8134-d5e8e04398fb" alt="Image 2" width="48%">
     <img src="https://github.com/user-attachments/assets/ecdf9e09-0e10-46cc-b1cf-6697dc5620ca" alt="Image 3" width="48%">
     <img src="https://github.com/user-attachments/assets/d00123ba-bf7f-427e-a5d0-ca5b3ca64ff0" alt="Image 4" width="48%">
